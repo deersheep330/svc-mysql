@@ -51,3 +51,27 @@ CREATE TABLE IF NOT EXISTS fugle_over_sold (
     FOREIGN KEY (symbol) REFERENCES stock (symbol),
     PRIMARY KEY (date, symbol)
 );
+
+CREATE TABLE IF NOT EXISTS twse_open_price (
+    date DATE NOT NULL DEFAULT (CURRENT_DATE),
+    symbol VARCHAR(16) NOT NULL,
+    price FLOAT NOT NULL,
+    FOREIGN KEY (symbol) REFERENCES stock (symbol),
+    PRIMARY KEY (date, symbol)
+);
+
+CREATE TABLE IF NOT EXISTS twse_close_price (
+    date DATE NOT NULL DEFAULT (CURRENT_DATE),
+    symbol VARCHAR(16) NOT NULL,
+    price FLOAT NOT NULL,
+    FOREIGN KEY (symbol) REFERENCES stock (symbol),
+    PRIMARY KEY (date, symbol)
+);
+
+CREATE TABLE IF NOT EXISTS us_close_price (
+    date DATE NOT NULL DEFAULT (CURRENT_DATE),
+    symbol VARCHAR(16) NOT NULL,
+    price FLOAT NOT NULL,
+    FOREIGN KEY (symbol) REFERENCES stock (symbol),
+    PRIMARY KEY (date, symbol)
+);
